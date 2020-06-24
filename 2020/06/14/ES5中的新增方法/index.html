@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jQuery入门函数写法 | Enheng</title>
+  <title>ES5中的新增方法 | Enheng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQueryjQuery入口函数写法1234567891011121314&#x2F;&#x2F;1$(document).ready(function() &amp;#123;&amp;#125;);&#x2F;&#x2F;2jQuery(document).ready(function()&amp;#123;&amp;#125;);&#x2F;&#x2F;4 推荐写法($function()&amp;#123;&amp;#125;);&#x2F;&#x2F;4jQuery(function()&amp;#123;&amp;#125;)">
+  <meta name="description" content="ES5中的新增方法数组方法遍历方法：forEach(), map(), filter(), some(), every() forEach()array.forEach(function(currentValue, index, arr) {})  currentValue：数组当前项的值 index：数组当前项的索引 arr：数组对象的本身  filter()array.filter(funct">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery入门函数写法">
-<meta property="og:url" content="http://yoursite.com/2020/06/12/jQuery%E5%85%A5%E9%97%A8%E5%87%BD%E6%95%B0%E5%86%99%E6%B3%95/index.html">
+<meta property="og:title" content="ES5中的新增方法">
+<meta property="og:url" content="http://yoursite.com/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Enheng">
-<meta property="og:description" content="jQueryjQuery入口函数写法1234567891011121314&#x2F;&#x2F;1$(document).ready(function() &amp;#123;&amp;#125;);&#x2F;&#x2F;2jQuery(document).ready(function()&amp;#123;&amp;#125;);&#x2F;&#x2F;4 推荐写法($function()&amp;#123;&amp;#125;);&#x2F;&#x2F;4jQuery(function()&amp;#123;&amp;#125;)">
+<meta property="og:description" content="ES5中的新增方法数组方法遍历方法：forEach(), map(), filter(), some(), every() forEach()array.forEach(function(currentValue, index, arr) {})  currentValue：数组当前项的值 index：数组当前项的索引 arr：数组对象的本身  filter()array.filter(funct">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-12T12:10:53.436Z">
-<meta property="article:modified_time" content="2020-06-12T07:15:07.393Z">
+<meta property="article:published_time" content="2020-06-14T03:28:54.464Z">
+<meta property="article:modified_time" content="2020-06-14T06:29:46.776Z">
 <meta property="article:author" content="Enheng">
 <meta name="twitter:card" content="summary">
   
@@ -154,52 +154,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jQuery入门函数写法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ES5中的新增方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery入门函数写法
+      ES5中的新增方法
     </h1>
   
 
         
-        <a href="/2020/06/12/jQuery%E5%85%A5%E9%97%A8%E5%87%BD%E6%95%B0%E5%86%99%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-06-12T12:10:53.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-12</time>
+        <a href="/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-06-14T03:28:54.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="jQuery入口函数写法"><a href="#jQuery入口函数写法" class="headerlink" title="jQuery入口函数写法"></a>jQuery入口函数写法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//2</span></span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//4 推荐写法</span></span><br><span class="line">($<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//4</span></span><br><span class="line">jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="jQuery冲突问题"><a href="#jQuery冲突问题" class="headerlink" title="jQuery冲突问题"></a>jQuery冲突问题</h2><p>问题：$符号别的js也使用了</p>
-<p>解决方法：</p>
+        <h1 id="ES5中的新增方法"><a href="#ES5中的新增方法" class="headerlink" title="ES5中的新增方法"></a>ES5中的新增方法</h1><h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><p>遍历方法：<font color=red>forEach(), map(), filter(), some(), every()</font></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p><code>array.forEach(function(currentValue, index, arr) {})</code></p>
 <ul>
-<li><font color=red>释放$的使用权</font>(注意点：释放操作必须在编写其他jQuery代码之前编写，释放之后就不能在使用jquery了)</li>
+<li>currentValue：数组当前项的值</li>
+<li>index：数组当前项的索引</li>
+<li>arr：数组对象的本身</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jQuery.noConflic();</span><br><span class="line">jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p><code>array.filter(function(currentValue, index, arr) {})</code></p>
 <ul>
-<li>自定义一个访问符号</li>
+<li>currentValue：数组当前项的值</li>
+<li>index：数组当前项的索引</li>
+<li>arr：数组对象的本身</li>
+<li>创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素，主要用于筛选数组</li>
+<li>注意它直接返回一个新的数组</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nj = jQuery.noConflic();</span><br><span class="line">nj(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="jQuery核心函数"><a href="#jQuery核心函数" class="headerlink" title="jQuery核心函数"></a>jQuery核心函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回的都是一个jQuery对象</span></span><br><span class="line">$();</span><br></pre></td></tr></table></figure>
-
-<h2 id="jQuery对象"><a href="#jQuery对象" class="headerlink" title="jQuery对象"></a>jQuery对象</h2><ul>
-<li>什么是jQuery对象<br>  <font color=red>jQuery对象是一个<font color=blue>伪数组(只要有0到length-1的属性，并且有length属性)</font></font></li>
+<h3 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h3><p><code>array.some(function(currentValue, index, arr) {})</code></p>
+<ul>
+<li>currentValue：数组当前项的值</li>
+<li>index：数组当前项的索引</li>
+<li>arr：数组对象的本身</li>
+<li>用于检测数组中的元素是否满足指定条件（查找数组中是否有满足条件的元素）</li>
+<li>注意它返回值是布尔值，如果查找到这个元素，就返回true，如果找不到就返回false</li>
+<li>如果找到第一个满足条件的元素，则终止循环，不再继续查找</li>
+<li>查找效率高，用return true;来终止。</li>
 </ul>
-<h3 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h3><p>静态方法和实例方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        <span class="comment">//定义一个类</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">AClass</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//给这个类添加一个静态方法</span></span><br><span class="line">        <span class="comment">//直接添加给类的就是静态方法</span></span><br><span class="line">        AClass.staticMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"11"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//静态方法调用通过类名</span></span><br><span class="line">        AClass.staticMethod();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//给这个类添加一个实例方法</span></span><br><span class="line">        AClass.prototype.instanceMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">"22"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//实例方法通过类的实例调用</span></span><br><span class="line">        <span class="comment">//创建一个实例(创建一个对象)</span></span><br><span class="line">        <span class="keyword">var</span> a = <span class="keyword">new</span> AClass;</span><br><span class="line">        <span class="comment">//通过实例调用实例方法</span></span><br><span class="line">        a.instanceMethod();</span><br><span class="line"></span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><p><font color=red>trim()方法会从一个字符串的两端删除空白字符，该方法不会影响原字符串本身，它返回的是一个新的字符串</font></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.trim();</span><br></pre></td></tr></table></figure>
 
-<h2 id="静态方法each方法-P9"><a href="#静态方法each方法-P9" class="headerlink" title="静态方法each方法(P9)"></a>静态方法each方法(P9)</h2><p>each方法用来遍历数组，但是原生js中each只能遍历数组，而jQuery可以遍历数组和伪元素</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/jquery-1.12.4.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var arr = [1, 2, 3, 4, 5];</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/原生遍历方法(只能遍历数组，不能遍历伪数组)</span></span><br><span class="line"><span class="regexp">        arr.forEach(function(value, index) &#123;</span></span><br><span class="line"><span class="regexp">            console.log(index, value);</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/随意定义个伪数组</span></span><br><span class="line"><span class="regexp">        var obj = &#123;0:1, 1:4, 2:4, 3:6, length:4&#125;;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ obj.forEach(function(value, index) &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/     /</span><span class="regexp">/报错</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/     console.log(index, value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ &#125;)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/利用jQuery遍历数组</span></span><br><span class="line"><span class="regexp">        $.each(arr, function(index, value) &#123;</span></span><br><span class="line"><span class="regexp">            console.log(index, value);</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/利用jQuery遍历伪数组</span></span><br><span class="line"><span class="regexp">        $.each(obj, function(index, value) &#123;</span></span><br><span class="line"><span class="regexp">            console.log(index, value);</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h2><p><font color=red>Object.definedProperty(obj, prop, descriptor)定义对象中新属性或修改原有的属性</font></p>
+<ul>
+<li>obj：必须。目标对象</li>
+<li>prop：必须。需定义或修改的属性名字（字符串形式）</li>
+<li>descriptor：必须。目标属性所拥有的特性（对象形式）</li>
+</ul>
+<p>第三个参数descriptor说明：</p>
+<ul>
+<li>value：设置属性的值，默认为underfined</li>
+<li>writable：值是否可以重写。true | false (默认，不允许修改)</li>
+<li>enumerable：目标属性是否能被枚举。true | false (默认，不能被遍历)</li>
+<li>configurable：目标属性是否可以被删除或再次修改第三个参数的特性（以上四个参数）。 true | false (默认，不允许修改)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    id: <span class="string">'andy'</span>,</span><br><span class="line">    name: <span class="string">'andy'</span>,</span><br><span class="line">    age: <span class="number">15</span>,</span><br><span class="line">    sex: <span class="string">'男'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'money'</span>, &#123;</span><br><span class="line">    value: <span class="number">1000</span>,</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
 
-<h2 id="静态方法map方法-P10"><a href="#静态方法map方法-P10" class="headerlink" title="静态方法map方法(P10)"></a>静态方法map方法(P10)</h2>
       
 
       
@@ -278,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/12/jQuery%E5%85%A5%E9%97%A8%E5%87%BD%E6%95%B0%E5%86%99%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,15 +309,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ES5中的新增方法
-        
-      </div>
-    </a>
   
+    <a href="/2020/06/12/jQuery%E5%85%A5%E9%97%A8%E5%87%BD%E6%95%B0%E5%86%99%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery入门函数写法</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

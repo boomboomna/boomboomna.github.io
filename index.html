@@ -152,6 +152,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ES5中的新增方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">ES5中的新增方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-06-14T03:28:54.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ES5中的新增方法"><a href="#ES5中的新增方法" class="headerlink" title="ES5中的新增方法"></a>ES5中的新增方法</h1><h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><p>遍历方法：<font color=red>forEach(), map(), filter(), some(), every()</font></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p><code>array.forEach(function(currentValue, index, arr) {})</code></p>
+<ul>
+<li>currentValue：数组当前项的值</li>
+<li>index：数组当前项的索引</li>
+<li>arr：数组对象的本身</li>
+</ul>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p><code>array.filter(function(currentValue, index, arr) {})</code></p>
+<ul>
+<li>currentValue：数组当前项的值</li>
+<li>index：数组当前项的索引</li>
+<li>arr：数组对象的本身</li>
+<li>创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素，主要用于筛选数组</li>
+<li>注意它直接返回一个新的数组</li>
+</ul>
+<h3 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h3><p><code>array.some(function(currentValue, index, arr) {})</code></p>
+<ul>
+<li>currentValue：数组当前项的值</li>
+<li>index：数组当前项的索引</li>
+<li>arr：数组对象的本身</li>
+<li>用于检测数组中的元素是否满足指定条件（查找数组中是否有满足条件的元素）</li>
+<li>注意它返回值是布尔值，如果查找到这个元素，就返回true，如果找不到就返回false</li>
+<li>如果找到第一个满足条件的元素，则终止循环，不再继续查找</li>
+<li>查找效率高，用return true;来终止。</li>
+</ul>
+<h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><p><font color=red>trim()方法会从一个字符串的两端删除空白字符，该方法不会影响原字符串本身，它返回的是一个新的字符串</font></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.trim();</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h2><p><font color=red>Object.definedProperty(obj, prop, descriptor)定义对象中新属性或修改原有的属性</font></p>
+<ul>
+<li>obj：必须。目标对象</li>
+<li>prop：必须。需定义或修改的属性名字（字符串形式）</li>
+<li>descriptor：必须。目标属性所拥有的特性（对象形式）</li>
+</ul>
+<p>第三个参数descriptor说明：</p>
+<ul>
+<li>value：设置属性的值，默认为underfined</li>
+<li>writable：值是否可以重写。true | false (默认，不允许修改)</li>
+<li>enumerable：目标属性是否能被枚举。true | false (默认，不能被遍历)</li>
+<li>configurable：目标属性是否可以被删除或再次修改第三个参数的特性（以上四个参数）。 true | false (默认，不允许修改)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    id: <span class="string">'andy'</span>,</span><br><span class="line">    name: <span class="string">'andy'</span>,</span><br><span class="line">    age: <span class="number">15</span>,</span><br><span class="line">    sex: <span class="string">'男'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'money'</span>, &#123;</span><br><span class="line">    value: <span class="number">1000</span>,</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/14/ES5%E4%B8%AD%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jQuery入门函数写法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
